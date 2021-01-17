@@ -43,7 +43,7 @@ class PyoidcSettings:
         self,
         verify_ssl: Union[bool, str] = True,
         client_cert: Union[str, Tuple[str, str]] = None,
-        timeout: Union[float, Tuple[float, float]] = 5,
+        timeout: Union[float, Tuple[float, float]] = 30,
     ):
         self.verify_ssl = verify_ssl
         self.client_cert = client_cert

@@ -73,7 +73,7 @@ class KeyBundle(object):
         fileformat="jwk",
         keytype="RSA",
         keyusage=None,
-        timeout=5,
+        timeout=30,
     ):
         """
         Initialize the KeyBundle.
@@ -449,7 +449,7 @@ class KeyJar(object):
     """A keyjar contains a number of KeyBundles."""
 
     def __init__(
-        self, verify_ssl=True, keybundle_cls=KeyBundle, remove_after=3600, timeout=5
+        self, verify_ssl=True, keybundle_cls=KeyBundle, remove_after=3600, timeout=30
     ):
         """
         Initialize the class.
