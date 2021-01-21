@@ -1,4 +1,5 @@
 import hashlib
+import logging
 import string
 
 # Since SystemRandom is not available on all systems
@@ -25,6 +26,17 @@ except ImportError:
 
 __author__ = "Roland Hedberg"
 __version__ = "1.2.1"
+
+
+
+def setup_logging(log_level):
+    logging.basicConfig(format='%(asctime)s,%(msecs)d %(levelname)-8s [%(filename)s:%(lineno)d] %(message)s',
+                        datefmt='%Y-%m-%d:%H:%M:%S',
+                        level=log_level)
+
+setup_logging(logging.INFO)
+logger = logging.getLogger(__name__)
+logger.info('Logging initialised')
 
 OIDCONF_PATTERN = "%s/.well-known/openid-configuration"
 CC_METHOD = {"S256": hashlib.sha256, "S384": hashlib.sha384, "S512": hashlib.sha512}
